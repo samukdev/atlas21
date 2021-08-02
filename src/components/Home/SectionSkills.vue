@@ -1,7 +1,7 @@
 <template lang="pug">
 .wrapper.q-pb-xl.ignore-height
-  section(class="container q-pa-xl")
-    div(class="heading text-center" style="margin-bottom: 4rem;")
+  section(class="container q-pa-lg")
+    div(class="heading text-center q-px-sm" style="margin-bottom: 4rem;")
       h1(class="text-h3 font-playfair q-mt-none q-mb-md text-weight-medium text-black-1")
         | Skills
       p(class="text-h6 text-black-2 text-weight-regular font-lora")
