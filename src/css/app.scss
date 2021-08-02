@@ -1,0 +1,138 @@
+// app global css in SCSS form
+body {
+  height: 100vh;
+  background: #FAFBFD;
+  background-attachment: fixed;
+}
+
+html, *{
+  box-sizing: border-box;
+  font-family: Montserrat, sans-serif;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"),
+  url(fonts/Montserrat-Light.ttf) format("truetype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"),
+  url(fonts/Montserrat-Regular.ttf) format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"),
+  url(fonts/Montserrat-SemiBold.ttf) format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"),
+  url(fonts/Montserrat-Bold.ttf) format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: local("Lora"),
+  url(fonts/Lora-Regular.ttf) format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: local("Lora"),
+  url(fonts/Lora-SemiBold.ttf) format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: local("Lora"),
+  url(fonts/Lora-Bold.ttf) format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: local("PlayfairDisplay"),
+  url(fonts/PlayfairDisplay-Regular.ttf) format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: local("PlayfairDisplay"),
+  url(fonts/PlayfairDisplay-SemiBold.ttf) format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: local("PlayfairDisplay"),
+  url(fonts/PlayfairDisplay-Bold.ttf) format("truetype");
+  font-weight: 700;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.font-playfair {
+  font-family: PlayFairDisplay;
+}
+
+.font-lora {
+  font-family: 'Lora';
+}
+
+.min-full-page {
+  width: 100%;
+  height: 100vh;
+}
+
+.default-box {
+  background: #fff;
+  border-radius: 2ex;
+  box-shadow: 0 70px 140px 0 rgb(130 136 171 / 20%);
+  overflow: hidden;
+}
+
+.bg-primary-gradient {
+  background: $primary-gradient
+}
+
+.text-black-1 {
+  color: $text-black-1
+}
+
+.text-black-2 {
+  color: $text-black-2
+}
+
+.text-black-3 {
+  color: $text-black-3
+}
+// Control REM basis for responsivity
+@media (min-width: 401px) and (max-width: 768px) {
+  :root{
+    font-size: 14px;
+  }
+}
+@media (min-width: 341px) and (max-width: 400px) {
+  :root{
+    font-size: 12px;
+  }
+}
+@media (max-width: 340px) {
+  :root{
+    font-size: 9px;
+  }
+}
