@@ -13,8 +13,8 @@
       :key="project.id"
     )
       div.default-box.row.q-mb-lg
-        .col-md.col-xs-12(
-          :style="`background: url('/projects/${ project.image }'); background-size: cover; min-height: 300px;`"
+        .col-md-5.col-xs-12(
+          :style="`background: url('/projects/${ project.image }'); background-size: cover; min-height: 400px;`"
         )
         .col-md.col-xs-12(style="min-height: 350px;")
           div.q-pa-lg.q-mx-lg

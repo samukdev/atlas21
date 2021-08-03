@@ -24,10 +24,8 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-.wrapper {
-}
-.wrapper > *:not(.ignore-height) {
+.wrapper:first-child,
+.wrapper:last-child {
   min-height: inherit;
-  padding: 0 2rem;
 }
 </style>
