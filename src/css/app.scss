@@ -105,6 +105,10 @@ html, *{
   overflow: hidden;
 }
 
+.btn-box-shadow {
+  box-shadow: 0 11px 36px 0 rgb(70 89 138 / 25%);
+}
+
 .bg-primary-gradient {
   background: $primary-gradient
 }

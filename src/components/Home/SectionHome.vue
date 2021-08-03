@@ -1,6 +1,6 @@
 <template lang="pug">
 .wrapper.column.q-pa-md
-  .col-auto.flex.justify-end.q-py-md
+  .col-auto
     the-header
 
     q-btn(
@@ -57,9 +57,10 @@ export default {
 <style scoped lang="scss">
 .wrapper {
   background: url('/waveheader.svg');
-  background-size: contain;
+  background-size: 100% auto;
   background-repeat: no-repeat;
-  background-position-y: -1%;
+  background-position-y: -5px;
+  background-position-x: 50%;
 }
 
 .cta {

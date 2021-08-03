@@ -1,9 +1,9 @@
 <template lang="pug">
 q-page(class="wrapper")
-  section-home
-  section-skills
-  section-portfolio
-  section-contato
+  section-home(id="#home")
+  section-skills(id="#skills")
+  section-portfolio(id="#projetos")
+  section-contato(id="#contato")
 </template>
 
 <script>

@@ -2,13 +2,13 @@ export default () => ({
   isDrawerOpen: false,
   socialLinks: [
     {
-      label: 'GitHub',
+      label: '/samukdev',
       icon: 'fab fa-github',
       link: 'https://github.com/samukdev',
       order: 2,
     },
     {
-      label: 'Linkedin',
+      label: '/samukdev',
       icon: 'fab fa-linkedin',
       link: 'https://linkedin.com/in/samukdev',
       order: 1,
@@ -16,7 +16,7 @@ export default () => ({
   ],
   anchors: [
     {
-      selector: '#portfolio',
+      selector: '#projetos',
       label: 'Projetos',
       order: 2,
     },

@@ -5,6 +5,11 @@
       | Obrigado pela visita!
     p(v-html="paragraph")
     CTA(class="cta")
+  footer(class="full-width text-center text-caption absolute-bottom q-pa-md text-grey-1")
+    | Designed and developed by
+    strong(class="text-weight-medium")
+      | &nbsp Samuel Barbosa
+    | .
 </template>
 
 <script>
@@ -22,6 +27,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+// TODO: Utilizar diferentes imagens para diferentes tamanhos de tela.
 .wrapper {
   background: url('/wave.svg');
   background-size: contain;
