@@ -1,13 +1,8 @@
 <template lang="pug">
-.wrapper.q-pb-xl.ignore-height
-  section(class="container q-pa-lg")
-    div(class="heading text-center q-px-sm" style="margin-bottom: 4rem;")
-      h1(class="text-h3 font-playfair q-mt-none q-mb-md text-weight-medium text-black-1")
-        | Skills
-      p(class="text-h6 text-black-2 text-weight-regular font-lora")
-        | Um pouco sobre minhas habilidades e conhecimentos.
-      div(class="flex flex-center")
-        span(class="separator")
+section-template(
+  title="Skills"
+  subtitle="Um pouco sobre minhas skills e formação acadêmica."
+)
     div(class="row  q-col-gutter-xl")
       div.col-md.col-xs-12
         div.default-box.q-pa-xl.fit
@@ -47,7 +42,15 @@
 </template>
 
 <script>
+import SectionTemplate from 'components/SectionTemplate.vue';
+
 export default {
+  name: 'SectionSkills',
+
+  components: {
+    SectionTemplate,
+  },
+
   data: () => ({
     skills: [
       {

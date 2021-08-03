@@ -1,5 +1,5 @@
 <template lang="pug">
-.wrapper.column
+.wrapper.column.q-pa-md
   .col-auto.flex.justify-end.q-py-md
     the-header
 

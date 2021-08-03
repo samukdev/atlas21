@@ -17,7 +17,7 @@ export default () => ({
   anchors: [
     {
       selector: '#portfolio',
-      label: 'Portfólio',
+      label: 'Projetos',
       order: 2,
     },
     {

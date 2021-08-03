@@ -1,5 +1,5 @@
 <template lang="pug">
-.wrapper.flex.flex-center
+.wrapper.flex.flex-center.q-pa-md
   section.default-box.q-pa-xl
     h1(class="font-playfair")
       | Obrigado pela visita!
@@ -24,7 +24,7 @@ export default {
 <style scoped lang="scss">
 .wrapper {
   background: url('/wave.svg');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position-y: 100%;
 }
