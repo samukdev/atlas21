@@ -6,7 +6,7 @@ div(
   @click="copyToClipboard()"
 )
   div(id="copyTarget" ref="copyTarget" v-show="false")
-  div(class="main-content rounded-borders")
+  div(class="main-content")
     div(class="flex items-center text-uppercase" style="letter-spacing: 1px; font-size: 0.85rem;")
       q-icon(
         name="mail"
@@ -71,6 +71,7 @@ export default {
   .main-content {
     padding: 1rem 1rem;
     font-weight: 500;
+    border-radius: 0.5ex;
 
     display: flex;
     flex-direction: row;

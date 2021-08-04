@@ -6,7 +6,7 @@ section-template(
   div(
     v-for="(project, projectIndex) in projects"
     :key="project.id"
-    style="max-width: 1000px;"
+    style="max-width: 900px;"
     class="q-mx-auto"
   )
     div.default-box.row(
@@ -26,16 +26,17 @@ section-template(
           //-     :key="tag"
           //-   )
           //-     | {{ tag }}
-          h1.font-playfair.text-h3.text-black-1.q-mt-none.q-mb-lg
+          h1.font-playfair.text-h4.text-weight-medium.text-black-1.q-mt-none.q-mb-lg
             | {{ project.title }}
-          p.text-black-2.text-h6.text-black-3.text-weight-regular.q-mb-lg
+          p.text-black-2.text-black-4.text-weight-regular.q-mb-lg.description
             | {{ project.description }}
           q-btn(
             rounded
             color="primary-gradient"
             style="letter-spacing: 2px; font-size: 0.75rem;"
-            padding="1rem 3rem"
-            @click="openNewTab(socialLink.link)"
+            class="q-mt-md"
+            padding="0.85rem 3rem"
+            @click="openNewTab(project.link)"
             unelevated
             label="View Project"
             class="btn-box-shadow"
@@ -57,8 +58,9 @@ export default {
       {
         id: 1,
         title: 'A simple Weather app',
-        description: 'A simple web app that consumes a API for previewing the weather',
+        description: 'A simple web app that consumes a API for previewing the weather.',
         image: 'weather-app.webp',
+        link: 'https://github.com/samukdev/weather-app',
         tags: ['Vue', 'Javascript', 'Bulma'],
       },
       {
@@ -66,6 +68,7 @@ export default {
         title: 'Covid19 Report',
         description: 'How is the corona going on your country ? Check it here!',
         image: 'covid19-report.webp',
+        link: 'https://github.com/samukdev/covid19-report',
         tags: ['Vue', 'Javascript', 'Bulma'],
       },
       {
@@ -73,21 +76,35 @@ export default {
         title: 'Border Radius Preview',
         description: 'Wanna simulate some border-radius easy ? Try this app.',
         image: 'border-radius-previewer.webp',
+        link: 'https://github.com/samukdev/borderradius-generator',
         tags: ['Vue', 'Javascript', 'Bulma'],
       },
     ],
   }),
+
+  methods: {
+    openNewTab(url) {
+      window.open(url, '_blank').focus();
+    },
+  },
 };
 </script>
 
 <style scoped lang="scss">
+.description {
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.78;
+  letter-spacing: .44px;
+}
 .card-content {
   padding: 4rem;
 }
 
 @media (max-width: 1024px) {
   .card-content {
-    padding: 2rem;
+    padding: 3rem 2rem;
   }
 }
 // TODO: Utilizar diferentes imagens para diferentes tamanhos de tela.

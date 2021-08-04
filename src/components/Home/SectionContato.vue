@@ -1,6 +1,6 @@
 <template lang="pug">
 .wrapper.flex.flex-center.q-px-md(
-  style="padding-top: 10%; padding-bottom: 15rem;"
+  style="padding-top: 8%; padding-bottom: 15rem;"
 )
   section.default-box.q-pa-xl
     h1(class="font-playfair")
