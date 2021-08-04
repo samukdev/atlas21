@@ -1,7 +1,7 @@
 <template lang="pug">
 section-template(
   title="Skills"
-  subtitle="Um pouco sobre minhas skills e formação acadêmica."
+  subtitle="Essas são minhas skills e formação."
 )
     div(class="row  q-col-gutter-xl")
       div.col-md.col-xs-12

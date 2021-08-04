@@ -14,8 +14,8 @@ section-template(
     )
       .col-sm.col-xs-12
         q-img(:src="`/projects/${ project.image }`" :ratio="1" style="min-height: 100%")
-      .col-sm.col-xs-12.flex.flex-center(style="min-height: 350px;")
-        div.q-mx-lg(style="padding: 4rem;")
+      .col-sm.col-xs-12.flex.flex-center
+        div(class="card-content")
           //- div(class="row")
           //-   div(
           //-     class="text-black-1 text-caption q-pa-none q-mb-lg"
@@ -81,6 +81,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.card-content {
+  padding: 4rem;
+}
+
+@media (max-width: 1024px) {
+  .card-content {
+    padding: 2rem;
+  }
+}
 // TODO: Utilizar diferentes imagens para diferentes tamanhos de tela.
 .separator {
   font-size: 14px;

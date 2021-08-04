@@ -24,8 +24,7 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-.wrapper:first-child,
-.wrapper:last-child {
+.wrapper:first-child {
   min-height: inherit;
 }
 </style>

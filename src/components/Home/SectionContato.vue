@@ -1,5 +1,7 @@
 <template lang="pug">
-.wrapper.flex.flex-center.q-pa-md
+.wrapper.flex.flex-center.q-px-md(
+  style="padding-top: 10%; padding-bottom: 15rem;"
+)
   section.default-box.q-pa-xl
     h1(class="font-playfair")
       | Obrigado pela visita!
@@ -30,7 +32,7 @@ export default {
 // TODO: Utilizar diferentes imagens para diferentes tamanhos de tela.
 .wrapper {
   background: url('/wave.svg');
-  background-size: contain;
+  background-size: 100% auto;
   background-repeat: no-repeat;
   background-position-y: 100%;
 }
