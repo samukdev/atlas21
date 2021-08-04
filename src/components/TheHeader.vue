@@ -9,11 +9,15 @@ q-toolbar(class="q-px-md gt-sm text-grey-1 row items-center")
       class="rounded-borders"
       class="flex flex-center"
       v-for="socialLink in socialLinks"
+      @click="openNewTab(socialLink.link)"
       :key="socialLink.label"
       :style="{ order: socialLink.order }"
     )
       q-item-section(class="q-pr-md text-grey-1" side)
-        q-icon(size="1.5rem" @click="openNewTab(socialLink.link)" :name="socialLink.icon")
+        q-icon(
+          size="1.5rem"
+          :name="socialLink.icon"
+        )
       q-item-section(
         style="letter-spacing: 1px; font-size: 0.7rem;"
       )
