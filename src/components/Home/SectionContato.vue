@@ -32,9 +32,9 @@ export default {
 // TODO: Utilizar diferentes imagens para diferentes tamanhos de tela.
 .wrapper {
   background: url('/wave.svg');
-  background-size: 100% auto;
+  background-size: 101% auto;
   background-repeat: no-repeat;
-  background-position-y: 100%;
+  background-position-y: 101%;
 }
 
 section {

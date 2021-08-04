@@ -57,7 +57,7 @@ export default {
 <style scoped lang="scss">
 .wrapper {
   background: url('/waveheader.svg');
-  background-size: 100% auto;
+  background-size: 101% auto;
   background-repeat: no-repeat;
   background-position-y: -5px;
   background-position-x: 50%;
