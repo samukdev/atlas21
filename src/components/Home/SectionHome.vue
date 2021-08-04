@@ -2,15 +2,15 @@
 .wrapper.column.q-pa-md
   .col-auto
     the-header
-
-    q-btn(
-      dense
-      flat
-      round
-      icon="menu"
-      class="lt-sm text-grey-1"
-      @click="toggleDrawer"
-    )
+    div(class="full-width flex justify-end lt-md")
+      q-btn(
+        dense
+        flat
+        round
+        icon="menu"
+        class="text-grey-1"
+        @click="toggleDrawer"
+      )
   .col.flex.flex-center
     transition(
       appear
