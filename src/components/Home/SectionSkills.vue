@@ -9,6 +9,8 @@ section-template(
           h6(
             class="text-black-2 font-lora q-mt-none q-mb-xl"
           )
+            span(class="q-mr-md")
+              q-icon(name="school" size="1.5rem" class="text-black-3")
             | Formação
           q-list(class="row q-col-gutter-xs")
             q-item(
@@ -20,14 +22,16 @@ section-template(
             )
               q-item-section(class="text-bold text-black-1 font-lora")
                 | {{ certification.name }}
-              q-item-section(class="text-black-2 text-caption")
+              q-item-section(class="text-black-3 text-caption")
                 | {{ `${certification.institute} ( ${certification.start} - ${certification.end || 'Atualmente'})` }}
 
       div.col-md.col-xs-12
         div.default-box.q-pa-xl.fit
           h6(
-            class="text-black-2 font-lora q-mt-none q-mb-xl"
+            class="text-black-2 font-lora q-mt-none q-mb-xl flex items-center"
           )
+            span(class="q-mr-md")
+              q-icon(name="code" class="text-black-3" size="1.5rem")
             | Linguagens e tecnologias
           q-list(class="row q-col-gutter-xs")
             q-item(

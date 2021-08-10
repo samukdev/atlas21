@@ -1,12 +1,17 @@
 <template lang="pug">
 .wrapper
-  section(class="q-pa-lg container")
+  section(class="q-pa-lg container" )
     div(
       class="heading text-center q-px-sm"
     )
-      h1(class="text-h3 font-playfair q-mt-none q-mb-md text-weight-medium text-black-1")
+      h1(
+        v-if="title"
+        class="text-h3 font-playfair q-mt-none q-mb-md text-weight-medium text-black-1")
         | {{ title }}
-      p(class="text-h6 text-black-2 text-weight-regular font-lora")
+      p(
+        v-if="subtitle"
+        class="text-h6 text-black-2 text-weight-regular font-lora"
+      )
         | {{ subtitle }}
       div(class="flex flex-center")
         span(class="separator")

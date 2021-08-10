@@ -1,6 +1,6 @@
 <template lang="pug">
 .wrapper.flex.flex-center.q-px-md(
-  style="padding-top: 8%; padding-bottom: 15rem;"
+  style="padding-top: 10%; padding-bottom: 15rem; margin-top: -10%;"
 )
   section.default-box.q-pa-xl
     h1(class="font-playfair")
@@ -32,7 +32,7 @@ export default {
 // TODO: Utilizar diferentes imagens para diferentes tamanhos de tela.
 .wrapper {
   background: url('/wave.svg');
-  background-size: 101% auto;
+  background-size: auto 100%;
   background-repeat: no-repeat;
   background-position-y: 101%;
 }
