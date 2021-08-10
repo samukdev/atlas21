@@ -23,28 +23,35 @@ q-toolbar(class="q-px-md gt-sm text-grey-1 row items-center")
       )
         | {{ socialLink.label }}
   q-space
-  q-list(class="row")
-    q-item(
-      clickable
-      @click="handleScroll(anchor.selector)"
-      class="rounded-borders text-uppercase"
-      v-for="anchor in anchors"
-      :key="anchor.selector"
-      :style="{ order: anchor.order }"
-    )
-      q-item-section(
-        style="letter-spacing: 2px; font-size: 0.7rem;"
+  div(class="flex items-center")
+    q-list(class="row")
+      q-item(
+        clickable
+        @click="handleScroll(anchor.selector)"
+        class="rounded-borders text-uppercase"
+        v-for="anchor in anchors"
+        :key="anchor.selector"
+        :style="{ order: anchor.order }"
       )
-        | {{ anchor.label }}
+        q-item-section(
+          style="letter-spacing: 2px; font-size: 0.7rem;"
+        )
+          | {{ anchor.label }}
+    lang-switch
 </template>
 
 <script>
 import { scroll } from 'quasar';
+import LangSwitch from 'components/LangSwitch.vue';
 
 const { getScrollTarget, setVerticalScrollPosition } = scroll;
 
 export default {
   name: 'TheHeader',
+
+  components: {
+    LangSwitch,
+  },
 
   methods: {
     handleScroll(el) {
