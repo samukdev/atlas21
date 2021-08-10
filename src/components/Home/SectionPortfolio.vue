@@ -13,28 +13,30 @@ section-template(
       :class="{ 'q-mb-xl': projectIndex <= (projects.length - 1), 'reverse': (projectIndex + 1) % 2 === 0}"
     )
       .col-sm.col-xs-12
-        q-img(:src="`/projects/${ project.image }`" :ratio="1" style="min-height: 100%")
+        q-img(:src="`/projects/${ project.bgImage }`" :ratio="1" style="min-height: 100%")
+          div(class="abolsute fit bg-transparent q-pa-lg flex flex-center")
+            q-img(:src="`/projects/${ project.image }`")
       .col-sm.col-xs-12.flex.flex-center
         div(class="card-content")
-          //- div(class="row")
-          //-   div(
-          //-     class="text-black-1 text-caption q-pa-none q-mb-lg"
-          //-     style="border-radius: 100ex; border: 1px solid #303030"
-          //-     class="q-py-xs q-px-md"
-          //-     :class="{ 'q-mr-xs': tagIndex <= project.tags.length - 1}"
-          //-     v-for="(tag, tagIndex) in project.tags"
-          //-     :key="tag"
-          //-   )
-          //-     | {{ tag }}
+          div(class="row")
+            div(
+           class="text-black-1 text-caption q-pa-none q-mb-sm"
+             style="border-radius: 100ex; border: 1px solid #303030"
+             class="q-py-xs q-px-md"
+             :class="{ 'q-mr-xs': tagIndex <= project.tags.length - 1}"
+             v-for="(tag, tagIndex) in project.tags"
+             :key="tag"
+           )
+             | {{ tag }}
           h1.font-playfair.text-h4.text-weight-medium.text-black-1.q-mt-none.q-mb-lg
             | {{ project.title }}
           p.text-black-2.text-black-4.text-weight-regular.q-mb-lg.description
             | {{ project.description }}
           q-btn(
             rounded
-            color="primary-gradient"
             style="letter-spacing: 2px; font-size: 0.75rem;"
-            class="q-mt-md"
+            :style="project.btnStyle"
+            class="q-mt-md text-grey-1"
             padding="0.85rem 3rem"
             @click="openNewTab(project.link)"
             unelevated
@@ -57,27 +59,36 @@ export default {
     projects: [
       {
         id: 1,
+        order: 1,
         title: 'A simple Weather app',
         description: 'A simple web app that consumes a API for previewing the weather.',
-        image: 'weather-app.webp',
+        image: 'weather-app.png',
+        bgImage: 'bg-green.svg',
+        btnStyle: 'background: linear-gradient(225deg, #0FCFA1 0%, #65B8E7 100%);',
         link: 'https://github.com/samukdev/weather-app',
-        tags: ['Vue', 'Javascript', 'Bulma'],
+        tags: ['Vue'],
       },
       {
         id: 2,
-        title: 'Covid19 Report',
-        description: 'How is the corona going on your country ? Check it here!',
-        image: 'covid19-report.webp',
+        order: 3,
+        title: 'Pomodoro Clock',
+        description: 'Same time, more efficiency',
+        image: 'pomodoro.png',
+        bgImage: 'bg-purple.svg',
+        btnStyle: 'background: linear-gradient(225deg, #7A5DEF 0%, #6567E7 100%);',
         link: 'https://github.com/samukdev/covid19-report',
-        tags: ['Vue', 'Javascript', 'Bulma'],
+        tags: ['Vue'],
       },
       {
         id: 3,
+        order: 2,
         title: 'Border Radius Preview',
-        description: 'Wanna simulate some border-radius easy ? Try this app.',
-        image: 'border-radius-previewer.webp',
+        description: 'Simulate borde-radius in a box.',
+        image: 'borderradiuspreviewer.png',
+        bgImage: 'bg-blue.svg',
+        btnStyle: 'background: linear-gradient(225deg, #65B8E7 0%, #5182FF 86.98%);',
         link: 'https://github.com/samukdev/borderradius-generator',
-        tags: ['Vue', 'Javascript', 'Bulma'],
+        tags: ['Javascript'],
       },
     ],
   }),
