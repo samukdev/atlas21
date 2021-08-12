@@ -4,8 +4,9 @@
 )
   section.default-box.q-pa-xl
     h1(class="font-playfair")
-      | Obrigado pela visita!
-    p(v-html="paragraph")
+      | {{ $t('contactMe.title') }}
+    p
+      | {{ $t('contactMe.text') }}
     CTA(class="cta")
   footer(class="full-width text-center text-caption absolute-bottom q-pa-md text-grey-1")
     | Designed and developed by
@@ -23,7 +24,6 @@ export default {
   },
   data: () => ({
     heading: 'Obrigado pela visita!',
-    paragraph: 'Espero que tenha gostado de passar por aqui! Sinta-se a vontade para entrar em contato quando quiser.<br>Até mais!',
   }),
 };
 </script>

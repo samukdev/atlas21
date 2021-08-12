@@ -14,7 +14,7 @@ div
           clickable
           v-for="(lang, index) in langOptions"
           :key="index"
-          @click="selectedLanguage = lang"
+          @click="changeLang(lang)"
         )
           q-item-section(side)
             q-img(
@@ -32,23 +32,36 @@ export default {
   data: () => ({
     selectedLanguage: {
       label: 'Português',
-      value: 'pt-br',
+      value: 'pt-BR',
       iconImage: 'br',
     },
     lang: 'pt-br',
     langOptions: [
       {
         label: 'Português',
-        value: 'pt-br',
+        value: 'pt-BR',
         iconImage: 'br',
       },
       {
         label: 'English',
-        value: 'en-us',
+        value: 'en',
         iconImage: 'us',
       },
     ],
   }),
+
+  methods: {
+    changeLang(lang) {
+      this.selectedLanguage = lang;
+      this.$i18n.locale = lang.value;
+    },
+  },
+
+  created() {
+    const locale = this.$q.lang.getLocale();
+    this.$i18n.locale = locale;
+    this.selectedLanguage = this.langOptions.find((lang) => lang.value === locale);
+  },
 };
 </script>
 

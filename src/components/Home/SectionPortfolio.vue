@@ -1,7 +1,7 @@
 <template lang="pug">
 section-template(
-  title="Projetos"
-  subtitle="Alguns dos projetos do meu GitHub."
+  :title="$t('projects.sectionTitle')"
+  :subtitle="$t('projects.sectionSubtitle')"
 )
   div(
     v-for="(project, projectIndex) in projects"

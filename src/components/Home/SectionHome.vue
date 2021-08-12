@@ -18,8 +18,8 @@
       leave-active-class="animated fadeOut"
     )
       div(class="message-container default-box q-pa-xl")
-        h1(class="q-my-none text-center font-playfair") Oi, eu sou o Samuel
-        h2(class="q-my-none text-center") Desenvolvedor Frontend
+        h1(class="q-my-none text-center font-playfair") {{ $t('home.title') }}
+        h2(class="q-my-none text-center") {{ $t('home.subtitle') }}
         p(class="text-center")
           .local-container
             | São Paulo

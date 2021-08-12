@@ -1,7 +1,7 @@
 <template lang="pug">
 section-template(
-  title="Skills"
-  subtitle="Essas são minhas skills e formação."
+  :title="$t('skills.sectionTitle')"
+  :subtitle="$t('skills.sectionSubtitle')"
 )
     div(class="row  q-col-gutter-xl")
       div.col-md.col-xs-12
@@ -11,7 +11,7 @@ section-template(
           )
             span(class="q-mr-md")
               q-icon(name="school" size="1.5rem" class="text-black-3")
-            | Formação
+            | {{ $t('skills.education') }}
           q-list(class="row q-col-gutter-xs")
             q-item(
               v-for="certification in certifications"
@@ -32,7 +32,7 @@ section-template(
           )
             span(class="q-mr-md")
               q-icon(name="code" class="text-black-3" size="1.5rem")
-            | Linguagens e tecnologias
+            | {{ $t('skills.langsAndTech') }}
           q-list(class="row q-col-gutter-xs")
             q-item(
               v-for="(skill, index) in skills"

@@ -17,22 +17,22 @@ export default () => ({
   anchors: [
     {
       selector: '#projetos',
-      label: 'Projetos',
+      labelKey: 'header.items.projects',
       order: 2,
     },
     {
       selector: '#home',
-      label: 'Home',
+      labelKey: 'header.items.home',
       order: 1,
     },
     {
       selector: '#skills',
-      label: 'Skills',
+      labelKey: 'header.items.skills',
       order: 3,
     },
     {
       selector: '#contato',
-      label: 'Contato',
+      labelKey: 'header.items.contactme',
       order: 4,
     },
   ],

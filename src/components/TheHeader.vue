@@ -36,7 +36,7 @@ q-toolbar(class="q-px-md gt-sm text-grey-1 row items-center")
         q-item-section(
           style="letter-spacing: 2px; font-size: 0.7rem;"
         )
-          | {{ anchor.label }}
+          | {{ $t(anchor.labelKey) }}
     lang-switch
 </template>
 
