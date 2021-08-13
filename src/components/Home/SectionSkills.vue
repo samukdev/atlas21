@@ -23,7 +23,7 @@ section-template(
               q-item-section(class="text-bold text-black-1 font-lora")
                 | {{ certification.name }}
               q-item-section(class="text-black-3 text-caption")
-                | {{ `${certification.institute} ( ${certification.start} - ${certification.end || 'Atualmente'})` }}
+                | {{ `${certification.institute} (${certification.start} - ${certification.end || 'Atualmente'})` }}
 
       div.col-md.col-xs-12
         div.default-box.q-pa-xl.fit
@@ -133,7 +133,7 @@ export default {
       },
       {
         id: 1,
-        name: 'Técnica em Informática',
+        name: 'Técnico em Informática',
         institute: 'ETEC - Centro Paula Souza',
         start: '2017',
         end: '2018',

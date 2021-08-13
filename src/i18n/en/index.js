@@ -13,7 +13,7 @@ export default {
   },
   aboutMe: {
     sectionTitle: 'About me',
-    text: 'I am developer. My greatest passion is User Interface development, but I do more than that. I am a UX enthusiast. You can know more about me and my work in the next sections.',
+    text: 'I am a developer. My greatest passion is User Interface development, but I do more than that. I am a UX enthusiast. You can know more about me and my work in the next sections.',
   },
   skills: {
     sectionTitle: 'Skills',
