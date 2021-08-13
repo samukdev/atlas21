@@ -4,7 +4,7 @@ section-template(
   :subtitle="$t('projects.sectionSubtitle')"
 )
   div(
-    v-for="(project, projectIndex) in projects"
+    v-for="(project, projectIndex) in orderedProjects"
     :key="project.id"
     style="max-width: 900px;"
     class="q-mx-auto"
@@ -59,7 +59,7 @@ export default {
     projects: [
       {
         id: 1,
-        order: 1,
+        order: 2,
         title: 'A simple Weather app',
         description: 'A simple web app that consumes a API for previewing the weather.',
         image: 'weather-app.png',
@@ -81,14 +81,14 @@ export default {
       },
       {
         id: 3,
-        order: 2,
-        title: 'Border Radius Preview',
-        description: 'Simulate borde-radius in a box.',
-        image: 'borderradiuspreviewer.png',
+        order: 1,
+        title: 'Login Page',
+        description: 'A responsive login page made with Vue and Firebase.',
+        image: 'nuxt-login.png',
         bgImage: 'bg-blue.svg',
         btnStyle: 'background: linear-gradient(225deg, #65B8E7 0%, #5182FF 86.98%);',
-        link: 'https://github.com/samukdev/borderradius-generator',
-        tags: ['Javascript'],
+        link: 'https://github.com/samukdev/nuxt-app',
+        tags: ['Vue', 'Nuxt', 'Firebase'],
       },
     ],
   }),
@@ -96,6 +96,13 @@ export default {
   methods: {
     openNewTab(url) {
       window.open(url, '_blank').focus();
+    },
+  },
+
+  computed: {
+    orderedProjects() {
+      const projectsCopy = JSON.parse(JSON.stringify(this.projects));
+      return projectsCopy.sort((a, b) => a.order - b.order);
     },
   },
 };
