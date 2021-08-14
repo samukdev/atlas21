@@ -5,7 +5,7 @@ q-layout(view="hHr lpR fFf")
     enter-active-class="animated fadeIn"
     leave-active-class="animated fadeOut"
   )
-    div(reveal :reveal-offset="100" class="bg-primary-light")
+    div(reveal :reveal-offset="100" class="q-px-sm q-py-md bg-primary-light")
       TheHeader
 
   q-drawer(

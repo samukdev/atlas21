@@ -39,6 +39,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.message-container {
+  margin-top: -6rem;
+}
 .wrapper {
   background: url('/waveheader.svg');
   background-size: 101% auto;
