@@ -16,6 +16,7 @@ div(
       | {{ email }}
 
   transition(
+    class="gt-sm"
     appear
     enter-active-class="animated fadeIn"
     leave-active-class="animated fadeOut"
