@@ -1,4 +1,13 @@
 <template lang="pug">
+q-toolbar(class="full-width flex justify-end lt-md")
+  q-btn(
+    dense
+    flat
+    round
+    icon="menu"
+    class="text-grey-1"
+    @click="toggleDrawer"
+  )
 q-toolbar(class="q-px-md gt-sm text-grey-1 row items-center")
   q-list(class="row items-center")
     q-item
@@ -54,6 +63,9 @@ export default {
   },
 
   methods: {
+    toggleDrawer() {
+      this.$store.commit('app/toggleDrawer');
+    },
     handleScroll(el) {
       const ele = document.getElementById(el);
       const target = getScrollTarget(ele);

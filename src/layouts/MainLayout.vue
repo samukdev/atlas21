@@ -5,6 +5,8 @@ q-layout(view="hHr lpR fFf")
     enter-active-class="animated fadeIn"
     leave-active-class="animated fadeOut"
   )
+    div(reveal :reveal-offset="100" class="bg-primary-light")
+      TheHeader
 
   q-drawer(
     v-model="isDrawerOpen"
@@ -14,7 +16,7 @@ q-layout(view="hHr lpR fFf")
     bordered
   )
     .wrapper.column.fit
-      q-list(class="q-pa-md col")
+      q-list(class="flex column q-pa-md col")
         q-item(
           v-close-popup
           clickable
@@ -25,18 +27,21 @@ q-layout(view="hHr lpR fFf")
           @click="handleScroll(anchor.selector)"
         )
           q-item-section
-            | {{ anchor.label }}
+            | {{ $t(anchor.labelKey) }}
 
-      q-list(class="row justify-end q-pa-md col-auto")
+      q-list(class="row q-pa-md col-auto")
         q-item(
           clickable
-          class="rounded-borders"
-          class="flex flex-center"
+          class="rounded-borders text-black-2"
+          class="flex flex-centers"
           v-for="socialLink in socialLinks"
           :key="socialLink.label"
           :style="{ order: socialLink.order }"
         )
-          q-icon(size="1.5rem" @click="openNewTab(socialLink.link)" :name="socialLink.icon")
+          q-item-section(side)
+            q-icon(size="1.5rem" @click="openNewTab(socialLink.link)" :name="socialLink.icon")
+          q-item-section
+            | {{ socialLink.label }}
 
   q-page-container()
     router-view
@@ -44,10 +49,14 @@ q-layout(view="hHr lpR fFf")
 
 <script>
 import { scroll } from 'quasar';
+import TheHeader from 'components/TheHeader.vue';
 
 const { getScrollTarget, setVerticalScrollPosition } = scroll;
 
 export default {
+  components: {
+    TheHeader,
+  },
   computed: {
     isDrawerOpen: {
       get() {

@@ -1,16 +1,5 @@
 <template lang="pug">
 .wrapper.column.q-pa-md
-  .col-auto
-    the-header
-    div(class="full-width flex justify-end lt-md")
-      q-btn(
-        dense
-        flat
-        round
-        icon="menu"
-        class="text-grey-1"
-        @click="toggleDrawer"
-      )
   .col.flex.flex-center
     transition(
       appear
@@ -30,13 +19,11 @@
 
 <script>
 import CTA from 'components/CTA.vue';
-import TheHeader from 'components/TheHeader.vue';
 
 export default {
   name: 'sectionHome',
   components: {
     CTA,
-    TheHeader,
   },
   data() {
     return {
@@ -46,9 +33,6 @@ export default {
   methods: {
     openNewTab(url) {
       window.open(url, '_blank').focus();
-    },
-    toggleDrawer() {
-      this.$store.commit('app/toggleDrawer');
     },
   },
 };
