@@ -2,7 +2,7 @@
   "name": "atlas21",
   "version": "0.0.1",
   "description": "Portfólio 2021",
-  "productName": "atlas21",
+  "productName": "Samuel B. - Developer",
   "author": "Samuk",
   "private": true,
   "scripts": {
@@ -10,6 +10,7 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
+    "@quasar/cli": "^1.2.1",
     "@quasar/extras": "^1.0.0",
     "core-js": "^3.6.5",
     "quasar": "^2.0.0",

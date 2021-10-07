@@ -154,8 +154,8 @@ module.exports = configure((ctx) => ({
     },
 
     manifest: {
-      name: 'atlas21',
-      short_name: 'atlas21',
+      name: 'Samuel B. - Dev',
+      short_name: 'Samuel B.',
       description: 'Portfólio 2021',
       display: 'standalone',
       orientation: 'portrait',
