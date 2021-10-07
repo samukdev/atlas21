@@ -29,4 +29,8 @@ export default {
     title: 'Thanks for visiting!',
     text: 'I hope you enjoyed my page. Feel free to contact me anytime you want. See ya!',
   },
+  CTA: {
+    label: 'Copy email',
+    notify: 'Email copied to clipboard!',
+  },
 };

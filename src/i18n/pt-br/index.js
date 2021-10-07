@@ -29,4 +29,8 @@ export default {
     title: 'Obrigado pela visita!',
     text: 'Espero que tenha gostado de passar por aqui! Sinta-se a vontade para entrar em contato quando quiser. Até mais!',
   },
+  CTA: {
+    label: 'Copiar e-mail',
+    notify: 'Email copiado! Espero seu contato!',
+  },
 };

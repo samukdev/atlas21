@@ -33,7 +33,7 @@ div(
             size="1.5rem"
             class="q-mr-sm"
           )
-          | Copiar e-mail
+          | {{ $t('CTA.label') }}
 </template>
 
 <script>
@@ -48,7 +48,7 @@ export default {
       await navigator.clipboard.writeText(this.email);
 
       this.$q.notify({
-        message: 'E-mail copiado! Espero seu contato!',
+        message: this.$t('CTA.notify'),
         icon: 'mail',
         color: 'primary',
         timeout: 1250,
