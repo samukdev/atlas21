@@ -112,6 +112,7 @@ module.exports = configure((ctx) => ({
   // animations: 'all', // --- includes all animations
   // https://v2.quasar.dev/options/animations
   animations: [
+    'bounceIn',
     'fadeIn',
     'fadeOut',
     'zoomIn',

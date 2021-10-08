@@ -59,7 +59,7 @@ export default {
     projects: [
       {
         id: 1,
-        order: 2,
+        order: 3,
         title: 'A simple Weather app',
         description: 'A simple web app that consumes a API for previewing the weather.',
         image: 'weather-app.png',
@@ -70,7 +70,18 @@ export default {
       },
       {
         id: 2,
-        order: 3,
+        order: 2,
+        title: 'Pokedex',
+        description: 'Find and know more details about a pokemon.',
+        image: 'pokedex.png',
+        bgImage: 'bg-red.svg',
+        btnStyle: 'background: linear-gradient(225deg, #FE4545 0%, #D62C92 100%);',
+        link: 'https://github.com/samukdev/PokemonList',
+        tags: ['Javascript', 'Vue', 'Quasar'],
+      },
+      {
+        id: 3,
+        order: 4,
         title: 'Pomodoro Clock',
         description: 'Same time, more efficiency',
         image: 'pomodoro.png',
@@ -80,7 +91,7 @@ export default {
         tags: ['Vue'],
       },
       {
-        id: 3,
+        id: 4,
         order: 1,
         title: 'Login Page',
         description: 'A responsive login page made with Vue and Firebase.',

@@ -42,20 +42,22 @@ q-layout(view="hHr lpR fFf")
             q-icon(size="1.5rem" @click="openNewTab(socialLink.link)" :name="socialLink.icon")
           q-item-section
             | {{ socialLink.label }}
-
   q-page-container()
     router-view
+    ScrollTopButton
 </template>
 
 <script>
 import { scroll } from 'quasar';
 import TheHeader from 'components/TheHeader.vue';
+import ScrollTopButton from 'components/ScrollTopButton.vue';
 
 const { getScrollTarget, setVerticalScrollPosition } = scroll;
 
 export default {
   components: {
     TheHeader,
+    ScrollTopButton,
   },
   computed: {
     isDrawerOpen: {
