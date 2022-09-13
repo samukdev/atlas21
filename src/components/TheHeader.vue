@@ -15,12 +15,11 @@ q-toolbar(class="q-px-md gt-sm text-grey-1 row items-center")
         q-img(src="https://github.com/samukdev.png")
     q-item(
       clickable
-      class="rounded-borders"
-      class="flex flex-center"
-      v-for="socialLink in socialLinks"
-      @click="openNewTab(socialLink.link)"
-      :key="socialLink.label"
+      class="rounded-borders flex flex-center"
       :style="{ order: socialLink.order }"
+      v-for="socialLink in socialLinks"
+      :key="socialLink.label"
+      @click="openNewTab(socialLink.link)"
     )
       q-item-section(class="q-pr-md text-grey-1" side)
         q-icon(
@@ -52,19 +51,27 @@ q-toolbar(class="q-px-md gt-sm text-grey-1 row items-center")
 <script>
 import { scroll } from 'quasar';
 import LangSwitch from 'components/LangSwitch.vue';
+import { anchors, socialLinks } from 'src/utils';
 
 const { getScrollTarget, setVerticalScrollPosition } = scroll;
 
 export default {
   name: 'TheHeader',
 
+  emits: ['toggleDrawer'],
+
   components: {
     LangSwitch,
   },
 
+  data: () => ({
+    anchors,
+    socialLinks,
+  }),
+
   methods: {
     toggleDrawer() {
-      this.$store.commit('app/toggleDrawer');
+      this.$emit('toggleDrawer');
     },
     handleScroll(el) {
       const ele = document.getElementById(el);
@@ -76,19 +83,6 @@ export default {
 
     openNewTab(url) {
       window.open(url, '_blank').focus();
-    },
-  },
-
-  computed: {
-    anchors: {
-      get() {
-        return this.$store.getters['app/getAnchors'];
-      },
-    },
-    socialLinks: {
-      get() {
-        return this.$store.getters['app/getSocialLinks'];
-      },
     },
   },
 };

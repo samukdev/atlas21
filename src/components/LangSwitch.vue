@@ -60,7 +60,8 @@ export default {
   created() {
     const locale = this.$q.lang.getLocale();
     this.$i18n.locale = locale;
-    this.selectedLanguage = this.langOptions.find((lang) => lang.value === locale);
+    this.selectedLanguage = this.langOptions.find((lang) => lang.value === locale)
+      || this.langOptions[1];
   },
 };
 </script>

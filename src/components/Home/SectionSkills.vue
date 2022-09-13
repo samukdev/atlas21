@@ -1,3 +1,4 @@
+<!-- eslint-disable max-len -->
 <template lang="pug">
 section-template(
   :title="$t('skills.sectionTitle')"
@@ -42,7 +43,7 @@ section-template(
               :style="{ order: skill.order }"
             )
               q-item-section
-               | {{ skill.name }}
+                | {{ skill.name }}
 </template>
 
 <script>

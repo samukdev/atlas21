@@ -1,34 +1,35 @@
 {
-  "name": "atlas21",
+  "name": "quasar-project",
   "version": "0.0.1",
-  "description": "Portfólio 2021",
-  "productName": "Samuel B. - Developer",
-  "author": "Samuk",
+  "description": "A Quasar Project",
+  "productName": "Quasar App",
+  "author": "Samuel Barbosa <samuelbs98@gmail.com>",
   "private": true,
   "scripts": {
-    "deploy": "push-dir --dir=dist/spa --remote=gh-pages --branch=master",
     "lint": "eslint --ext .js,.vue ./",
-    "test": "echo \"No test specified\" && exit 0"
+    "lint:fix": "eslint --fix --ext .js,.vue ./",
+    "test": "echo \"No test specified\" && exit 0",
+    "dev": "quasar dev",
+    "build": "quasar build -m spa"
   },
   "dependencies": {
-    "@quasar/cli": "^1.2.1",
     "@quasar/extras": "^1.0.0",
     "core-js": "^3.6.5",
-    "push-dir": "^0.4.1",
-    "quasar": "^2.0.0",
-    "vue-i18n": "^9.1.7",
-    "vuex": "^4.0.1"
+    "pug": "^3.0.2",
+    "pug-plain-loader": "^1.1.0",
+    "quasar": "^2.6.0",
+    "vue": "^3.0.0",
+    "vue-i18n": "^9.3.0-beta.3",
+    "vue-router": "^4.0.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.13.14",
-    "@quasar/app": "^3.0.0",
-    "eslint": "^7.14.0",
-    "eslint-config-airbnb-base": "^14.0.0",
+    "@quasar/app-webpack": "^3.0.0",
+    "eslint": "^8.10.0",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-vue": "^7.0.0",
-    "eslint-webpack-plugin": "^2.4.0",
-    "pug": "^3.0.2",
-    "pug-plain-loader": "^1.1.0"
+    "eslint-plugin-vue": "^9.0.0",
+    "eslint-webpack-plugin": "^3.1.1"
   },
   "browserslist": [
     "last 10 Chrome versions",

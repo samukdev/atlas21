@@ -1,3 +1,4 @@
+<!-- eslint-disable max-len -->
 <template lang="pug">
 section-template(
   :title="$t('projects.sectionTitle')"
@@ -20,14 +21,13 @@ section-template(
         div(class="card-content")
           div(class="row")
             div(
-           class="text-black-1 text-caption q-pa-none q-mb-sm"
-             style="border-radius: 100ex; border: 1px solid #303030"
-             class="q-py-xs q-px-md"
-             :class="{ 'q-mr-xs': tagIndex <= project.tags.length - 1}"
-             v-for="(tag, tagIndex) in project.tags"
-             :key="tag"
-           )
-             | {{ tag }}
+              class="text-black-1 text-caption q-pa-none q-mb-sm q-py-xs q-px-md"
+              style="border-radius: 100ex; border: 1px solid #303030"
+              :class="{ 'q-mr-xs': tagIndex <= project.tags.length - 1}"
+              v-for="(tag, tagIndex) in project.tags"
+              :key="tag"
+            )
+              | {{ tag }}
           h1.font-playfair.text-h4.text-weight-medium.text-black-1.q-mt-none.q-mb-lg
             | {{ project.title }}
           p.text-black-2.text-black-4.text-weight-regular.q-mb-lg.description

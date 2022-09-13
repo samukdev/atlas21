@@ -6,7 +6,7 @@ q-layout(view="hHr lpR fFf")
     leave-active-class="animated fadeOut"
   )
     div(reveal :reveal-offset="100" class="q-px-sm q-py-md bg-primary-light")
-      TheHeader
+      TheHeader(@toggleDrawer="isDrawerOpen = !isDrawerOpen")
 
   q-drawer(
     v-model="isDrawerOpen"
@@ -32,8 +32,7 @@ q-layout(view="hHr lpR fFf")
       q-list(class="row q-pa-md col-auto")
         q-item(
           clickable
-          class="rounded-borders text-black-2"
-          class="flex flex-centers"
+          class="rounded-borders text-black-2 flex flex-centers"
           v-for="socialLink in socialLinks"
           :key="socialLink.label"
           :style="{ order: socialLink.order }"
@@ -51,6 +50,7 @@ q-layout(view="hHr lpR fFf")
 import { scroll } from 'quasar';
 import TheHeader from 'components/TheHeader.vue';
 import ScrollTopButton from 'components/ScrollTopButton.vue';
+import { anchors, socialLinks } from 'src/utils';
 
 const { getScrollTarget, setVerticalScrollPosition } = scroll;
 
@@ -59,30 +59,12 @@ export default {
     TheHeader,
     ScrollTopButton,
   },
-  computed: {
-    isDrawerOpen: {
-      get() {
-        return this.$store.getters['app/getDrawerState'];
-      },
-      set() {
-        this.$store.commit('app/toggleDrawer');
-      },
-    },
-    anchors: {
-      get() {
-        return this.$store.getters['app/getAnchors'];
-      },
-    },
-    socialLinks: {
-      get() {
-        return this.$store.getters['app/getSocialLinks'];
-      },
-    },
-  },
-  data() {
-    return {
-    };
-  },
+
+  data: () => ({
+    isDrawerOpen: false,
+    anchors,
+    socialLinks,
+  }),
 
   methods: {
     handleScroll(el) {

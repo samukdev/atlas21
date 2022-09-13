@@ -2,7 +2,7 @@
 div(class="bg-primary")
   div(
     v-if="visible"
-    style="height: 50px;"
+    style="height: 50px; margin-top: -2px;"
   )
   transition(
     appear
