@@ -1,46 +1,79 @@
-<template lang="pug">
-.wrapper.column.q-pa-md
-  .col.flex.flex-center
-    transition(
+<script setup>
+import CTA from 'components/CTA.vue';
+import { ref, computed } from 'vue';
+import { useMouseInElement } from '@vueuse/core';
+
+const target = ref(null);
+const previousValue = ref(null);
+
+const {
+  elementX, elementY, isOutside, elementHeight, elementWidth,
+} = useMouseInElement(target);
+
+const setPreviousValue = (value) => { previousValue.value = value; };
+const cardTransform = computed(() => {
+  const MAX_ROTATION = 10;
+
+  const rX = (
+    MAX_ROTATION / 2 - (elementY.value / elementHeight.value) * MAX_ROTATION).toFixed(2);
+
+  const rY = -(
+    MAX_ROTATION / 2 - (elementX.value / elementWidth.value) * MAX_ROTATION).toFixed(2);
+
+  if (isOutside.value && !previousValue.value) { return ''; }
+
+  if (isOutside.value && previousValue.value) {
+    return previousValue.value;
+  }
+
+  const value = `perspective(${elementWidth.value}px) rotateY(${rY}deg) rotateX(${rX}deg)`;
+
+  setPreviousValue(value);
+
+  return value;
+});
+</script>
+
+<template>
+<div class="wrapper column q-pa-md">
+  <div class="col flex flex-center">
+    <transition
       appear
       enter-active-class="animated zoomIn"
       leave-active-class="animated fadeOut"
-    )
-      div(class="message-container default-box q-pa-xl")
-        h1(class="q-my-none text-center font-playfair") {{ $t('home.title') }}
-        h2(class="q-my-none text-center") {{ $t('home.subtitle') }}
-        p(class="text-center")
-          .local-container
-            | São Paulo
-            span(class="separator")
-            | Brasil
-        CTA(class="cta")
+    >
+      <div
+        class="message-container default-box q-pa-xl"
+        ref="target"
+        :style="{ transform: cardTransform }"
+      >
+        <h1 class="q-my-none text-center font-playfair">
+          {{ $t('home.title') }}
+        </h1>
+
+        <h2 class="q-my-none text-center">
+          {{ $t('home.subtitle') }}
+        </h2>
+
+        <span class="text-center">
+          <div class="local-container">
+            São Paulo
+            <span class="separator" />
+            Brasil
+          </div>
+        </span>
+
+        <CTA class="cta"/>
+      </div>
+    </transition>
+  </div>
+</div>
 </template>
-
-<script>
-import CTA from 'components/CTA.vue';
-
-export default {
-  name: 'sectionHome',
-  components: {
-    CTA,
-  },
-  data() {
-    return {
-    };
-  },
-
-  methods: {
-    openNewTab(url) {
-      window.open(url, '_blank').focus();
-    },
-  },
-};
-</script>
 
 <style scoped lang="scss">
 .message-container {
   margin-top: -6rem;
+  transition: 'transform .2s ease-out';
 }
 .wrapper {
   background: url('/waveheader.svg');
